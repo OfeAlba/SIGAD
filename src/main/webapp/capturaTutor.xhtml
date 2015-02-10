@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <h:head>
+    	<h:outputStylesheet library="css" name="table-style.css"  />
+    </h:head>
+ 
+    <h:body>
+ 
+    	<h1>Nuevo Tutor</h1>
+ 		<h:form>
+    	   <!-- Aqui se ingresa el nombre y se valida -->
+    	   <h:outputLabel> Nombre </h:outputLabel>
+    	   <h:inputText value="#{tutoresVO.nombre}" label="nombre">
+    	   <f:validateLength minimum="2" maximum="10" />
+    	   </h:inputText>
+    	   <br> </br>
+    	   <h:message for="nombre" style="color:red" />
+    	   <!-- Aqui se ingresa el apellido1 y se valida -->
+    	   <h:outputLabel> Apellido1 </h:outputLabel>
+    	   <h:inputText value="#{tutoresVO.apellido1}" label="apellido1">
+    	   <f:validateLength minimum="2" maximum="10" />
+    	   </h:inputText>
+    	   <h:message for="apellido1" style="color:red" />
+    	   <br> </br>
+    	   <!-- Aqui se ingresa el apellido2 y se valida -->
+    	   <h:outputLabel> Apellido2 </h:outputLabel>
+    	   <h:inputText value="#{tutoresVO.apellido2}" label="apellido2">
+    	   <f:validateLength minimum="2" maximum="10" />
+    	   </h:inputText>
+    	   <h:message for="apellido2" style="color:red" />
+    	   <br> </br>
+    	   <!-- Aqui se ingresa el DNI y se valida -->
+    	   <h:outputLabel> DNI </h:outputLabel>
+    	   <h:inputText value="#{tutoresVO.DNI}" label="DNI">
+    	   <f:validateLength minimum="2" maximum="10" />
+    	   </h:inputText>
+    	   <h:message for="DNI" style="color:red" />
+    	   <br> </br>
+    	   <!-- Aqui se ingresa el Fecha Nacimiento y se valida -->
+    	   <h:outputLabel> Fecha Nacimiento </h:outputLabel>
+    	   <h:inputText id="fechaNac" value="#{tutoresVO.fechaNac}" 
+			size="20" required="true"
+			label="fechaNac" >
+			<f:convertDateTime pattern="d-M-yyyy"/>
+			<h:message for="fechaNac" style="color:red" />
+			</h:inputText>
+			<br> </br>
+    	    <!-- Aqui se ingresa el parentesco y se valida -->
+    	    <h:outputLabel> Parentesco </h:outputLabel>
+    	    <h:inputText value="#{tutoresVO.parentesco}" label="parentesco">
+    	    <f:validateLength minimum="2" maximum="20" />
+    	    </h:inputText>
+    	    <h:message for="parentesco" style="color:red" />
+    	    <br> </br>
+    	    <!-- Aqui se ingresa el telefono y se valida -->
+    	    <h:outputLabel> Telefono </h:outputLabel>
+    	    <h:inputText value="#{tutoresVO.telefono}" label="telefono">
+    	    <f:validateLength minimum="2" maximum="9" />
+    	    </h:inputText>
+    	    <h:message for="telefono" style="color:red" />
+    	    <br> </br>
+    	    <!-- Aqui se ingresa el email y se valida -->
+    	    <h:outputLabel> Email </h:outputLabel>
+    	    <h:inputText value="#{tutoresVO.email}" label="email">
+    	    <f:validateLength minimum="2" maximum="20" />
+    	    </h:inputText>
+    	    <h:message for="email" style="color:red" />
+    	    <br> </br>
+    	    <h:commandButton value="Registrar" action="#{tutorDAO.insertTutor}"></h:commandButton>
+    	</h:form>
+    </h:body>
+ </html>

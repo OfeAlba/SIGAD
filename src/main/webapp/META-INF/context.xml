@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+<Resource name="jdbc/myoracle" auth="Container"
+ type="javax.sql.DataSource" driverClassName="oracle.jdbc.driver.OracleDriver"
+ url="jdbc:mysql:@192:168:26.67:3306"
+ username="root" password="root" maxTotal="20" maxIdle="10"
+ maxWaitMillis="-1"/>
+</Context>
+
+<!-- url="jdbc:oracle:thin:@54.154.192.80:1521:xe" -->
