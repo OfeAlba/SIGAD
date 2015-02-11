@@ -26,7 +26,7 @@ public class TutorDAO implements TutorDAOInterface {
 	public TutorDAO() {
 		try {
 			Context ctx = new InitialContext();
-			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/myoracle");
+			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/opensigad");
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}
@@ -157,15 +157,25 @@ public class TutorDAO implements TutorDAOInterface {
 				throw new SQLException("Can't get database connection");
 	
 			PreparedStatement st = con
-					.prepareStatement("INSERT INTO tutores (idAlumno,nombre,apellido1,apellido2,DNI,fechaNac,parentesco,telefono,email) values (1,?,?,?,?,?,?,?)");			
+					.prepareStatement("INSERT INTO tutor (idAlumno,nombre,apellido1,apellido2,DNI,fechaNac,parentesco,tlf,email) values ('1',?,?,?,?,?,?,?,?)");			
 			st.setString(1, nombre);
 			st.setString(2, apellido1);
 			st.setString(3, apellido2);
 			st.setString(4, DNI);
-			st.setDate(5, fechaNac);
-			st.setString(6, telefono);
-			st.setString(7, email);
-			st.executeUpdate();				
+			st.setDate(5,fechaNac);
+			st.setString(6, parentesco);
+			st.setString(7, telefono);
+			st.setString(8, email);
+			
+			try
+			{
+			   st.executeUpdate();
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+				
+			}
 
 		} catch (Exception e) {
 

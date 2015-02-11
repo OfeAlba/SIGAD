@@ -40,16 +40,16 @@
     	   </h:inputText>
     	   <h:message for="DNI" style="color:red" />
     	   <br> </br>
-    	   <!-- Aqui se ingresa el Fecha Nacimiento y se valida     	   <h:outputLabel> Fecha Nacimiento </h:outputLabel>
+    	   <!-- Aqui se ingresa el Fecha Nacimiento y se valida -->  
+    	   <h:outputLabel> Fecha Nacimiento </h:outputLabel>
     	   <h:inputText id="fechaNac" value="#{formTutor.fechaNac}" 
 			size="20" required="true"
 			label="fechaNac" >
-			<f:convertDateTime pattern="d-M-yyyy"/>
+			<f:convertDateTime pattern="dd-MM-yyyy"/>
 			<h:message for="fechaNac" style="color:red" />
 			</h:inputText>
 			<br> </br>
-			-->
-    	    <!-- Aqui se ingresa el parentesco y se valida -->
+			<!-- Aqui se ingresa el parentesco y se valida -->
     	    <h:outputLabel> Parentesco </h:outputLabel>
     	    <h:inputText value="#{formTutor.parentesco}" label="parentesco">
     	    <f:validateLength minimum="2" maximum="20" />

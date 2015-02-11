@@ -86,7 +86,7 @@ public class FormTutor implements Serializable{
 
 	public void setFechaNac(Date fechaNac) {
 		
-		this.fechaNac = new java.sql.Date(fechaNac.getTime());
+		this.fechaNac = fechaNac;
 	}
 
 	public String getParentesco() {
@@ -118,7 +118,7 @@ public class FormTutor implements Serializable{
 		String pagina = "bienvenida";
 		
 		TutorDAO tutorDAO = new TutorDAO();
-		tutorDAO.insertarTutor(1,nombre, apellido1,apellido2, DNI, fechaNac, parentesco, tlf, email);
+		tutorDAO.insertarTutor(idAlumno,nombre, apellido1,apellido2, DNI, fechaNac, parentesco, tlf, email);
 		
 		return pagina;
 		
