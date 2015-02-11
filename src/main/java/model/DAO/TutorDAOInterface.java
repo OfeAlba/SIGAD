@@ -19,11 +19,11 @@ public interface TutorDAOInterface {
 	public abstract void deleteTutor(int id);
 
 	// modifica un tutor con el id recibido
-	public abstract int updateTutor(int idTutor, String nombre,
+	public abstract void updateTutor(int idTutor, String nombre,
 			String apellido1, String apellido2, String DNI, Date fechaNac,
 			String parentesco, String telefono, String email);
 
-    public void insertarTutor(int idAlumno, String nombre,
+    public abstract void insertarTutor(int idAlumno, String nombre,
 			String apellido1, String apellido2, String DNI, Date fechaNac,
 			String parentesco, String telefono, String email);
 	
