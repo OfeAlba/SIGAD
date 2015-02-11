@@ -9,6 +9,9 @@
     	<h:outputStylesheet library="css" name="table-style.css"  />
     </h:head>
  
+ 
+ <f:event type=”preRenderView”
+			listener=”#{clientViewBean.prepareView(id)}” />
     <h:body>
  
     	<h1>Nuevo Tutor</h1>
