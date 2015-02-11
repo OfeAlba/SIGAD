@@ -41,6 +41,6 @@
 	
 	<!-- Welcome page -->
 	<welcome-file-list>
-		<welcome-file>faces/capturaTutor.xhtml</welcome-file>
+		<welcome-file>ingresarTutor.xhtml</welcome-file>
 	</welcome-file-list>
 </web-app>
