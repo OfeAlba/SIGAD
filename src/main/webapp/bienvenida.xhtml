@@ -11,8 +11,8 @@
     </h:head>
     <h:body bgcolor="white">
     	<h3>Se ha guardado los datos</h3>
-    	<h4>Bienvenida #{tutoresVO.nombre} con fecha de nacimiento</h4>
-    	<h:outputText value="#{tutoresVO.fechaNac}" >
+    	<h4>Bienvenida #{formTutor.nombre} con fecha de nacimiento</h4>
+    	<h:outputText value="#{formTutor.fechaNac}" >
 		<f:convertDateTime pattern="d-M-yyyy" />
 		</h:outputText>
     </h:body>
