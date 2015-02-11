@@ -148,6 +148,24 @@ public class TutorDAO implements TutorDAOInterface {
 			String apellido2, String DNI, Date fechaNac, String parentesco,
 			String telefono, String email) {
 		try{
+			if (ds == null)
+				throw new SQLException("Can't get data source");
+			// get database connection
+			Connection con = ds.getConnection();
+	
+			if (con == null)
+				throw new SQLException("Can't get database connection");
+	
+			PreparedStatement st = con
+					.prepareStatement("INSERT INTO tutores (idAlumno,nombre,apellido1,apellido2,DNI,fechaNac,parentesco,telefono,email) values (1,?,?,?,?,?,?,?)");			
+			st.setString(1, nombre);
+			st.setString(2, apellido1);
+			st.setString(3, apellido2);
+			st.setString(4, DNI);
+			st.setDate(5, fechaNac);
+			st.setString(6, telefono);
+			st.setString(7, email);
+			st.executeUpdate();				
 
 		} catch (Exception e) {
 
