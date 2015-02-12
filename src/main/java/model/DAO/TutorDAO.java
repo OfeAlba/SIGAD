@@ -7,6 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.naming.Context;
@@ -144,7 +147,7 @@ public class TutorDAO implements TutorDAOInterface {
 		}		
 	}
 
-	public void insertarTutor(int idAlumno, String nombre, String apellido1,
+	public boolean insertarTutor(int idAlumno, String nombre, String apellido1,
 			String apellido2, String DNI, Date fechaNac, String parentesco,
 			String telefono, String email) {
 		try{
@@ -166,19 +169,17 @@ public class TutorDAO implements TutorDAOInterface {
 			st.setString(6, parentesco);
 			st.setString(7, telefono);
 			st.setString(8, email);
-			
-			try
-			{
-			   st.executeUpdate();
+			st.executeUpdate();
+			return true;
 			}
-			catch(SQLException e)
+			catch (Exception e) 
 			{
-				e.printStackTrace();
-				
+				Logger.getLogger(getClass().getName()).log(Level.SEVERE,
+					"Error en TutorDAO.insertarTutor:"
+							+ e.getMessage());
 			}
-
-		} catch (Exception e) {
-
-		}
+			return false;
 	}
+
+		
 }

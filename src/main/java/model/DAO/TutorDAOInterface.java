@@ -23,7 +23,7 @@ public interface TutorDAOInterface {
 			String apellido1, String apellido2, String DNI, Date fechaNac,
 			String parentesco, String telefono, String email);
 
-    public abstract void insertarTutor(int idAlumno, String nombre,
+    public abstract boolean insertarTutor(int idAlumno, String nombre,
 			String apellido1, String apellido2, String DNI, Date fechaNac,
 			String parentesco, String telefono, String email);
 	

@@ -115,10 +115,13 @@ public class FormTutor implements Serializable{
 	
 	public String insertarTutor() {
 		
-		String pagina = "bienvenida";
+		String pagina;
 		
 		TutorDAO tutorDAO = new TutorDAO();
-		tutorDAO.insertarTutor(idAlumno,nombre, apellido1,apellido2, DNI, fechaNac, parentesco, tlf, email);
+		if(tutorDAO.insertarTutor(idAlumno,nombre, apellido1,apellido2, DNI, fechaNac, parentesco, tlf, email))
+			pagina= "insertarTutorExito.xhtml";
+		else
+			pagina= "insertarTutorFallo.xhtml";
 		
 		return pagina;
 		
