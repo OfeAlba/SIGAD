@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <h:head>
+    	<h:outputStylesheet library="css" name="table-style.css"  />
+    	<title>Tutores</title>
+    </h:head>
+ 
+    <h:body>
+    	<h1>Tutores pra el alumno</h1>
+	<h:panelGrid columns="4" cellspacing="10">
+	Nombre:<h:outputText
+			value="#{tutorForm.tutorVO.nombre}">
+		</h:outputText>
+	Primer apellido:<h:outputText
+			value="#{tutorForm.tutorVO.apellido1}">
+		</h:outputText>
+	Segundo apellido:<h:outputText value="#{tutorForm.tutorVO.apellido2}">
+		</h:outputText>
+	DNI:<h:outputText
+			value="#{tutorForm.tutorVO.dni}">
+		</h:outputText>
+	Fecha de Nacimiento: <h:outputText
+			value="#{tutorForm.tutorVO.fechaNac}">
+		</h:outputText>
+	Parentesco:<h:outputText
+			value="#{tutorForm.tutorVO.parentesco}">
+		</h:outputText>
+	Teléfono: <h:outputText
+			value="#{tutorForm.tutorVO.tlf}">
+		</h:outputText>
+	E-mail:<h:outputText
+			value="#{tutorForm.tutorVO.email}">
+		</h:outputText>
+	</h:panelGrid>
+    	    <h:commandButton value="Registrar" action="#{formTutor.insertarTutor}"></h:commandButton>
+    	    <h:commandButton value="Modificar" action="#{formTutor.updateTutor}"></h:commandButton>
+    	    <h:commandButton value="Borrar" action="#{form.Tutor.deleteTutor}"></h:commandButton>
+    	</h:form>
+    </h:body>
+ </html>
