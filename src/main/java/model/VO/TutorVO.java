@@ -4,7 +4,6 @@ import java.sql.Date;
 
 public class TutorVO {
 	private int idTutor;
-	private int idAlumno;
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
@@ -14,12 +13,11 @@ public class TutorVO {
 	private String tlf;
 	private String email;
 
-	public TutorVO(int idTutor, int idAlumno, String nombre, String apellido1,
+	public TutorVO(int idTutor, String nombre, String apellido1,
 					String apellido2, String DNI, Date fechaNac, String parentesco,
 					String tlf, String email) {
 		
 		this.idTutor = idTutor;
-		this.idAlumno = idAlumno;
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
@@ -40,13 +38,6 @@ public class TutorVO {
 		this.idTutor = idTutor;
 	}
 
-	public int getIdAlumno() {
-		return idAlumno;
-	}
-
-	public void setIdAlumno(int idAlumno) {
-		this.idAlumno = idAlumno;
-	}
 
 	public String getNombre() {
 		return nombre;
@@ -115,7 +106,7 @@ public class TutorVO {
 
 	@Override
 	public String toString() {
-		return "TutoresVO [idTutor=" + idTutor + ", idAlumno=" + idAlumno
+		return "TutoresVO [idTutor=" + idTutor
 				+ ", nombre=" + nombre + ", apellido1=" + apellido1
 				+ ", apellido2=" + apellido2 + ", DNI=" + DNI + ", fechaNac="
 				+ fechaNac + ", parentesco=" + parentesco + ", tlf=" + tlf

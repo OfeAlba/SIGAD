@@ -11,31 +11,19 @@
     </h:head>
  
     <h:body>
-    	<h1>Tutores pra el alumno</h1>
-	<h:panelGrid columns="4" cellspacing="10">
-	Nombre:<h:outputText
-			value="#{tutorForm.tutorVO.nombre}">
-		</h:outputText>
-	Primer apellido:<h:outputText
-			value="#{tutorForm.tutorVO.apellido1}">
-		</h:outputText>
-	Segundo apellido:<h:outputText value="#{tutorForm.tutorVO.apellido2}">
-		</h:outputText>
-	DNI:<h:outputText
-			value="#{tutorForm.tutorVO.dni}">
-		</h:outputText>
-	Fecha de Nacimiento: <h:outputText
-			value="#{tutorForm.tutorVO.fechaNac}">
-		</h:outputText>
-	Parentesco:<h:outputText
-			value="#{tutorForm.tutorVO.parentesco}">
-		</h:outputText>
-	Teléfono: <h:outputText
-			value="#{tutorForm.tutorVO.tlf}">
-		</h:outputText>
-	E-mail:<h:outputText
-			value="#{tutorForm.tutorVO.email}">
-		</h:outputText>
+    	<h1>Tutores para el alumno</h1>
+	<h:panelGrid columns="1" cellspacing="10">
+	<p>Nombre  Primer apellido  Segundo apellido DNI Fecha de nacimiento Parentesco Teléfono E-mail </p>
+	<br></br>
+			<h:outputText value="#{tutorForm.tutorVO.nombre}"
+						  value="#{tutorForm.tutorVO.apellido1}"
+						  value="#{tutorForm.tutorVO.apellido2}"
+						  value="#{tutorForm.tutorVO.dni}"
+						  value="#{tutorForm.tutorVO.fechaNac}"
+						  value="#{tutorForm.tutorVO.parentesco}"
+						  value="#{tutorForm.tutorVO.tlf}"
+						  value="#{tutorForm.tutorVO.email}">
+		    </h:outputText>
 	</h:panelGrid>
     	    <h:commandButton value="Registrar" action="#{formTutor.insertarTutor}"></h:commandButton>
     	    <h:commandButton value="Modificar" action="#{formTutor.updateTutor}"></h:commandButton>
